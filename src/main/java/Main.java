@@ -9,6 +9,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+
+//        System.out.println(JdbcTemp.executeUpdate("iphone", 0));
+//        System.out.println(JdbcTemp.executeUpdate("Микроволновая печь", 0));
+//        System.out.println(JdbcTemp.executeQuery(0, 5000));
+        System.out.println(JdbcTemp.selectAll());
+    }
+}
+
+
+
 //        final List<Product> products = JdbcTemplate.executeQuery(
 //                "jdbc:sqlite:G:/Coding/Learning/it-park/Homeworks/E-Shop (SQL)/db.sqlite",
 //                "SELECT id, name, category, quantity, isAvailable, price FROM products;",
@@ -27,9 +37,3 @@ public class Main {
 //                }
 //        );
 //        System.out.println(products);
-
-        JdbcTemp.executeUpdate("iphone");
-        JdbcTemp.executeUpdate("Микроволновая печь");
-        System.out.println(JdbcTemp.executeQuery(0, 5000));
-    }
-}
