@@ -22,6 +22,6 @@ public class Product {
                 ", category='" + category + '\'' +
                 ", quantity=" + quantity +
                 ", isAvailable=" + isAvailable +
-                ", price=" + price;
+                ", price=" + price + "\n";
     }
 }
