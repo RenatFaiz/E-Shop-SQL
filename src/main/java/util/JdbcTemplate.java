@@ -7,9 +7,9 @@ import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class JdbcTemp {
+public class JdbcTemplate {
 
-    private JdbcTemp() {
+    private JdbcTemplate() {
     }
 
     private final static String url = "jdbc:sqlite:db.sqlite";
@@ -55,6 +55,7 @@ public class JdbcTemp {
                         resultSet.getInt("price")
                 ));
             }
+            resultSet.close();
             return results;
         } catch (SQLException e) {
             throw new SqlMappingExeption(e);
