@@ -13,7 +13,8 @@ public class Main {
 //        System.out.println(JdbcTemp.executeUpdate("iphone", 0));
 //        System.out.println(JdbcTemp.executeUpdate("Микроволновая печь", 0));
 //        System.out.println(JdbcTemp.executeQuery(0, 5000));
-        System.out.println(JdbcTemp.selectAll());
+//        System.out.println(JdbcTemp.selectAll());
+        System.out.println(JdbcTemp.getOrdersByDate());
     }
 }
 

@@ -2,6 +2,7 @@ package util;
 
 
 import model.Product;
+import service.Order;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -12,8 +13,10 @@ public class JdbcTemp {
     private JdbcTemp() {
     }
 
+    final static String url = "jdbc:sqlite:db.sqlite";
+
     public static int executeUpdate(String newName, int id) {
-        String url = "jdbc:sqlite:db.sqlite";
+
         String sql = "UPDATE products SET name = ? WHERE id = ? ;";
 
         try (Connection connection = DriverManager.getConnection(url);
@@ -30,7 +33,7 @@ public class JdbcTemp {
     }
 
     public static List<Product> executeQuery(int minPrice, int maxPrice) {
-        String url = "jdbc:sqlite:db.sqlite";
+
         String sql = "SELECT id, name, category, quantity, isAvailable," +
                 " price FROM products WHERE price BETWEEN ? AND ?;";
 
@@ -60,7 +63,7 @@ public class JdbcTemp {
     }
 
     public static List<Product> selectAll() {
-        String url = "jdbc:sqlite:db.sqlite";
+
         String sql = "SELECT id, name, category, quantity, isAvailable," +
                 " price FROM products;";
         try (Connection connection = DriverManager.getConnection(url);
@@ -83,7 +86,31 @@ public class JdbcTemp {
             throw new SqlMappingExeption(e);
         }
     }
+
+    public static List<Order> getOrdersByDate() {
+
+        String sql = "SELECT id, customer_id, order_price, status," +
+                " date FROM orders ORDER BY date";
+
+        try (
+                Connection connection = DriverManager.getConnection(url);
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(sql);
+        ) {
+            List<Order> orders = new LinkedList<>();
+            while (resultSet.next()) {
+                orders.add(new Order());
+            }
+            return orders;
+        } catch (SQLException e) {
+            throw new SqlMappingExeption(e);
+        }
+
+    }
+
+
 }
+
 
 
 // Update -> UPDATE, INSERT, DELETE
