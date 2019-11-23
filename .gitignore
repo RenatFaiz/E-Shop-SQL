@@ -1,5 +1,6 @@
 /out/
 /target/
+/backup/
 !.mvn/wrapper/maven-wrapper.jar
 .txt
 
