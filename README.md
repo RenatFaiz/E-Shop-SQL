@@ -1,4 +1,4 @@
-## Интернет-магазин 
+## Интернет-магазин [![Build Status](https://travis-ci.com/RenatFaiz/E-Shop-SQL.svg?branch=develop)](https://travis-ci.com/RenatFaiz/E-Shop-SQL)
 Спроектировать структуру БД (и заполнить 
 демо-данными для интернет-магазина).  
 Пусть в магазине продаются только 
